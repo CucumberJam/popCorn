@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-//import API_KEY from "../service/API_KEY";
+import API_KEY from "../service/API_KEY";
 
 export function useFetch(query, cb){
     const [isLoading, setIsLoading] = useState(false);
@@ -20,8 +20,9 @@ export function useFetch(query, cb){
             setIsLoading(true);
             setError('');
             try {
+                console.log(process.env.API_KEY);
                 const res = await fetch(
-                    `http://www.omdbapi.com/?apikey=${process.env.API_URL}&s=${query}`,
+                    `http://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`,
                     {signal: controller.signal}
                 );
                 if (!res.ok) throw new Error('Error while fetching...');

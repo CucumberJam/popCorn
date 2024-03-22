@@ -9,8 +9,6 @@ lerna-debug.log*
 
 node_modules
 build
-service
-.API_KEY.js
 .DS_Store
 dist
 dist-ssr

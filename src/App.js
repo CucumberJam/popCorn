@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import Loader from "./components/UI/Loader";
 import NavBar from "./components/NavBar";
 import Box from "./components/UI/Box";

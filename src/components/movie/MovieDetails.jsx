@@ -1,7 +1,7 @@
 import {useEffect, useRef, useState} from "react";
 import Loader from "../UI/Loader";
 import StarRating from "../UI/StarRating";
-import API_KEY from "../../service/API_KEY";
+//import API_KEY from "../../service/API_KEY";
 import {useEventKey} from "../../hooks/useEventKey";
 export default function MovieDetails({id, onCloseDetails, onAddWatched, watched}){
     const [movie, setMovie] = useState({});
@@ -20,7 +20,7 @@ export default function MovieDetails({id, onCloseDetails, onAddWatched, watched}
         async function fetchMovieDetails(){
             setIsLoading(true);
             try{
-                const res = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
+                const res = await fetch(`http://www.omdbapi.com/?apikey=${process.env.API_URL}&i=${id}`);
                 const data = await res.json();
                 setMovie(data);
             }catch (e) {

@@ -21,7 +21,7 @@ export default function MovieDetails({id, onCloseDetails, onAddWatched, watched}
         async function fetchMovieDetails(){
             setIsLoading(true);
             try{
-                const res = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
+                const res = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
                 const data = await res.json();
                 setMovie(data);
             }catch (e) {
